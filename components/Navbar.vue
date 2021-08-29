@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <NuxtLink class="nav-link" to="/addtodo">Add Todo</NuxtLink>
+          <NuxtLink class="nav-link" to="/todos/new">Add Todo</NuxtLink>
         </li>
         <li class="nav-item">
           <NuxtLink class="nav-link" to="/todos">List</NuxtLink>
