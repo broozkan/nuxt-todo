@@ -5,7 +5,7 @@
     <p v-else>Uncompleted</p>
     <div class="float-right">
       <NuxtLink :to="`todos/edit/${todo.id}`">Edit</NuxtLink>
-      <DeleteButton />
+      <DeleteButton :id="todo.id" />
     </div>
   </div>
 </template>

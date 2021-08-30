@@ -1,18 +1,21 @@
 <template>
-  <button class="btn btn-danger" @click="deleteTodo" :todo-id="id">
+  <button class="btn btn-danger" @click="deleteTodo(id)" :todo-id="id">
     Delete
   </button>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "DeleteButton",
   props: {
     id: Number,
   },
   methods: {
-    deleteTodo() {
-      console.log("Deleted");
+    ...mapActions(["deleteTodoById"]),
+    deleteTodo(id) {
+      this.deleteTodoById(id);
     },
   },
 };

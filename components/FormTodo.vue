@@ -3,7 +3,7 @@
     <div class="form-group">
       <label for="exampleInputEmail1">To Do Title</label>
       <input
-        data-testid="title"
+        id="title"
         v-model="todo.title"
         type="text"
         name="title"
