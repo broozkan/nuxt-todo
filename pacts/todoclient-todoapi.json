@@ -1,0 +1,43 @@
+{
+  "consumer": {
+    "name": "TodoClient"
+  },
+  "provider": {
+    "name": "TodoApi"
+  },
+  "interactions": [
+    {
+      "description": "a request for todos",
+      "providerState": "there are todos",
+      "request": {
+        "method": "GET",
+        "path": "/todos"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": [
+          {
+            "id": 1,
+            "title": "Do homework",
+            "is_done": true
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "min": 1
+          },
+          "$.body[*].*": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
