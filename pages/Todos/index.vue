@@ -17,6 +17,15 @@ export default {
     Navbar,
     Todo,
   },
+  async fetch({ store, error }) {
+    try {
+      await store.dispatch("fetchTodos");
+    } catch (e) {
+      error({
+        message: "Unable to fetch todos at this time. Please try again.",
+      });
+    }
+  },
   computed: { ...mapState(["todos"]) },
   created() {
     console.log(this.todos);

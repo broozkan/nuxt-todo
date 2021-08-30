@@ -21,6 +21,15 @@ export default {
     FormTodo,
     Navbar,
   },
+  async fetch({ store, error }) {
+    try {
+      await store.dispatch("fetchTodo", this.$route.params.id);
+    } catch (e) {
+      error({
+        message: "Unable to fetch todo at this time. Please try again.",
+      });
+    }
+  },
   data() {
     return {
       todo: JSON.parse(
